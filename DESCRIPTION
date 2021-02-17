@@ -1,0 +1,24 @@
+Package: oEmbed
+Title: Embed Web Contents in R
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Shinya",
+           family = "Uryu",
+           role = c("aut", "cre"),
+           email = "suika1127@gmail.com",
+           comment = c(ORCID = "0000-0002-0493-6186"))
+Description: Make a request for web resources that follows 
+    the 'oEmbed' specification and display the content.
+License: MIT + file LICENSE
+Imports:
+    glue (>= 1.4.2),
+    htmltools (>= 0.5.1.1),
+    httr (>= 1.4.2),
+    magrittr (>= 2.0.1),
+    memoise (>= 2.0.0),
+    rlang (>= 0.4.10)
+Encoding: UTF-8
+Language: en
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1

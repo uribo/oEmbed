@@ -1,0 +1,93 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# oEmbed
+
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/oEmbed)](https://CRAN.R-project.org/package=oEmbed)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
+The goal of oEmbed is to make a request for web resources that follows the '[oEmbed](https://oembed.com)' specification and display the content in R.
+
+## Installation
+
+You can install the released version of oEmbed from GitHub using remotes package:
+
+``` r
+if (!requireNamespace("remotes"))
+  install.packages("remotes")
+
+remotes::install_github("uribo/oEmbed")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(oEmbed)
+## basic example code
+```
+
+```{r, echo=TRUE, eval=FALSE}
+x <- 
+  oembed(service = "twitter", 
+         url = "https://twitter.com/u_ribo/status/1318770949722759168")
+x
+```
+
+```{r, echo=FALSE, eval=TRUE}
+x <- 
+  list(
+  url = "https://twitter.com/u_ribo/status/1318770949722759168",
+  author_name = "Uryu Shinya",
+  author_url = "https://twitter.com/u_ribo",
+  html = "<blockquote class=\"twitter-tweet\"><p lang=\"ja\" dir=\"ltr\">Rでのモデル開発を統一的に行う、tidymodelsの情報を整理しました\U0001f4aa <br>{tune}や{workflows}によるパラメータ探索、ワークフローの運用の話まで、広く紹介します。<br>{recipes}で新しいstep_()や関連パッケージも増えて更に便利になりました。<br>\U0001f989コード <a href=\"https://t.co/sT9jhrwaK8\">https://t.co/sT9jhrwaK8</a> <a href=\"https://t.co/Ag1CNutEBI\">https://t.co/Ag1CNutEBI</a> <a href=\"https://t.co/dMejxP6mwd\">pic.twitter.com/dMejxP6mwd</a></p>&mdash; Uryu Shinya (@u_ribo) <a href=\"https://twitter.com/u_ribo/status/1318770949722759168?ref_src=twsrc%5Etfw\">October 21, 2020</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+  width = 550L,
+  height = NULL,
+  type = "rich",
+  cache_age = "3153600000",
+  provider_name = "Twitter",
+  provider_url = "https://twitter.com",
+  version = "1.0"
+)
+x
+```
+
+
+```{r, echo = TRUE}
+embed_contents(x)
+```
+
+### Video
+
+Browsing YouTube Videos in RStudio Viewer
+
+```{r, echo = TRUE, eval = FALSE}
+x <-
+  oembed("youtube", 
+       url = "https://www.youtube.com/watch?v=wQPgM-9LatM", 
+       format = "json",
+       maxwidth = 600)
+
+htmltools::browsable(embed_contents(x))
+```
+
+
+## Similar Projects
+
+- [vembedr](https://github.com/ijlyttle/vembedr)
+- [tubeplayR](https://github.com/kazutan/tubeplayR)
